@@ -108,6 +108,7 @@
     --card:#FFFFFF;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
+  html{ -webkit-text-size-adjust:100%; }
   body{
     background:#EFE6DA;
     font-family:'Nunito',sans-serif;
@@ -180,8 +181,8 @@
   /* ---------- feature grid ---------- */
   .grid{
     margin-top:34px;
-    display:flex;
-    flex-wrap:wrap;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));
     gap:16px;
   }
   .feat{
@@ -191,8 +192,7 @@
     text-align:center;
     box-shadow:0 8px 20px rgba(92,59,42,0.08);
     position:relative;
-    flex:1 1 calc(16.6666% - 14px);
-    min-width:200px;
+    min-width:0;
   }
   .feat .fic{
     width:56px; height:56px; border-radius:50%;
@@ -240,7 +240,81 @@
     padding:10px 20px;
     font-size:13px;
     font-weight:800;
-    display:flex; align-items:center; gap:8px;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    white-space:nowrap;
+  }
+  .legal{
+    text-align:center;
+    margin-top:18px;
+    font-size:13px;
+    font-weight:700;
+    color:#8A6A56;
+  }
+
+  @media (max-width: 1100px){
+    .slide{ padding:40px 36px 32px; min-height:0; }
+    .hero h2{ font-size:40px; }
+    .seal{ width:120px; height:120px; }
+  }
+
+  @media (max-width: 720px){
+    body{ padding:0; }
+    .slide{
+      width:100%;
+      min-height:100dvh;
+      border-radius:0;
+      box-shadow:none;
+      padding:22px 18px 28px;
+      overflow:visible;
+    }
+    .deco{ display:none; }
+    .header{
+      align-items:flex-start;
+      gap:12px;
+    }
+    .brand{ gap:12px; }
+    .brand .icon{ width:56px; height:56px; flex-shrink:0; }
+    .brand h1{ font-size:28px; }
+    .brand p{ font-size:11px; letter-spacing:1px; }
+    .seal{ width:88px; height:88px; transform:rotate(6deg); }
+    .seal-text div{ font-size:7.5px; line-height:1.35; }
+    .seal-text b{ font-size:13px; margin-bottom:1px; }
+    .hero{ margin-top:18px; }
+    .hero h2{ font-size:28px; }
+    .hero p{ font-size:15px; }
+    .trust-row{ gap:8px; }
+    .trust-pill{ padding:8px 12px; font-size:12px; }
+    .grid{
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:22px;
+    }
+    .feat{
+      border-radius:18px;
+      padding:14px 10px;
+      transform:none !important;
+    }
+    .feat .fic{ width:44px; height:44px; font-size:22px; margin-bottom:8px; }
+    .feat p{ font-size:13px; }
+    .feat span{ font-size:11px; }
+    .footer{
+      flex-direction:column;
+      align-items:stretch;
+      gap:14px;
+      padding:20px 18px;
+      border-radius:20px;
+      margin-top:22px;
+      text-align:center;
+    }
+    .footer h3{ font-size:18px; }
+    .stores{ justify-content:center; }
+    .store-btn{ width:100%; padding:12px 16px; }
+    .legal{ margin-top:16px; font-size:12px; }
+  }
+
+  @media (max-width: 380px){
+    .grid{ grid-template-columns:1fr; }
+    .hero h2{ font-size:24px; }
   }
 </style>
 </head>
@@ -336,7 +410,7 @@
     </div>
   </div>
 
-  <p style="text-align:center;margin-top:18px;font-size:13px;font-weight:700;color:#8A6A56;">
+  <p class="legal">
     <a href="/privacy.html" style="color:#C97C5D;text-decoration:none;">Политика за поверителност</a>
     · dremcho.com
   </p>
