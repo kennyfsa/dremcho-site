@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дремчо — Всичко за бебето</title>
+<meta name="description" content="Дремчо — всичко за бебето. Без абонамент. Без реклами.">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF2E7;
+    --cream-2:#F0DCC4;
+    --terracotta:#C97C5D;
+    --terracotta-2:#D48A66;
+    --peach:#F4C9A8;
+    --sage:#AABF9C;
+    --sage-2:#8FAE7D;
+    --gold:#E3B77E;
+    --rose:#D9A88F;
+    --brown:#5C3B2A;
+    --brown-soft:#8A6A56;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#EFE6DA;
+    font-family:'Nunito',sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:40px 20px 24px;
+  }
+
+  .slide{
+    width:min(1600px, 100%);
+    min-height:900px;
+    background:
+      radial-gradient(circle at 92% 8%, rgba(170,191,156,0.35) 0%, transparent 32%),
+      radial-gradient(circle at 4% 90%, rgba(201,124,93,0.18) 0%, transparent 30%),
+      var(--cream);
+    border-radius:36px;
+    box-shadow:0 40px 80px rgba(92,59,42,0.28);
+    position:relative;
+    overflow:hidden;
+    padding:56px 64px 48px;
+  }
+
+  /* decorative floating shapes */
+  .deco{ position:absolute; opacity:0.9; }
+  .deco.cloud{ font-size:46px; opacity:0.5; }
+  .deco.star{ font-size:26px; opacity:0.55; }
+
+  /* ---------- header ---------- */
+  .header{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:18px; }
+  .brand .icon{ width:78px; height:78px; }
+  .brand h1{ font-family:'Comfortaa',sans-serif; font-size:40px; color:var(--brown); font-weight:700; }
+  .brand p{ font-size:14px; font-weight:800; color:var(--terracotta); letter-spacing:1.5px; text-transform:uppercase; margin-top:2px; }
+
+  .seal{ position:relative; width:150px; height:150px; flex-shrink:0; transform:rotate(8deg); }
+  .seal svg{ width:100%; height:100%; }
+  .seal-text{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    text-align:center; color:#fff; font-family:'Nunito',sans-serif;
+  }
+  .seal-text div{ font-size:11.5px; font-weight:800; line-height:1.5; letter-spacing:0.5px; }
+  .seal-text b{ display:block; font-family:'Comfortaa',sans-serif; font-size:19px; margin-bottom:3px; }
+
+  /* ---------- hero ---------- */
+  .hero{ margin-top:22px; max-width:980px; }
+  .hero h2{
+    font-family:'Comfortaa',sans-serif;
+    font-size:52px;
+    color:var(--brown);
+    font-weight:700;
+    line-height:1.15;
+  }
+  .hero h2 span{ color:var(--terracotta); }
+  .hero p{
+    font-size:18px;
+    color:var(--brown-soft);
+    font-weight:600;
+    margin-top:12px;
+    max-width:720px;
+  }
+
+  .trust-row{ display:flex; gap:12px; margin-top:20px; flex-wrap:wrap; }
+  .trust-pill{
+    background:var(--card); border:2px solid var(--cream-2); border-radius:30px;
+    padding:9px 18px; font-size:13.5px; font-weight:800; color:var(--brown);
+    display:flex; align-items:center; gap:7px;
+  }
+  .trust-pill.solid{ background:var(--sage); color:#fff; border-color:var(--sage); }
+
+  /* ---------- feature grid ---------- */
+  .grid{
+    margin-top:34px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .feat{
+    background:var(--card);
+    border-radius:26px;
+    padding:18px 14px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(92,59,42,0.08);
+    position:relative;
+    flex:1 1 calc(16.6666% - 14px);
+    min-width:200px;
+  }
+  .feat .fic{
+    width:56px; height:56px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:26px; margin:0 auto 10px;
+  }
+  .feat p{ font-size:13px; font-weight:800; color:var(--brown); line-height:1.35; }
+  .feat span{ display:block; font-size:10.5px; color:var(--brown-soft); font-weight:700; margin-top:3px; }
+
+  .feat:nth-child(1) .fic{ background:var(--peach); }
+  .feat:nth-child(2) .fic{ background:#DCE6D3; }
+  .feat:nth-child(3) .fic{ background:#D7EAE1; }
+  .feat:nth-child(4) .fic{ background:var(--gold); }
+  .feat:nth-child(5) .fic{ background:var(--peach); }
+  .feat:nth-child(6) .fic{ background:#E4D6EE; }
+  .feat:nth-child(7) .fic{ background:#DCE6D3; }
+  .feat:nth-child(8) .fic{ background:var(--gold); }
+  .feat:nth-child(9) .fic{ background:#D7EAE1; }
+  .feat:nth-child(10) .fic{ background:var(--peach); }
+  .feat:nth-child(11) .fic{ background:#E4D6EE; }
+  .feat:nth-child(12) .fic{ background:var(--gold); }
+
+  .feat:nth-child(3n+1){ transform:rotate(-1.6deg); }
+  .feat:nth-child(3n+2){ transform:rotate(1.4deg); }
+  .feat:nth-child(3n){ transform:rotate(-0.8deg); }
+
+  /* ---------- footer ---------- */
+  .footer{
+    margin-top:36px;
+    background:linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-2) 100%);
+    border-radius:28px;
+    padding:26px 34px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    color:#fff;
+  }
+  .footer h3{ font-family:'Comfortaa',sans-serif; font-size:22px; font-weight:700; }
+  .footer p{ font-size:13.5px; font-weight:700; color:#F6E4D6; margin-top:4px; }
+  .stores{ display:flex; gap:12px; }
+  .store-btn{
+    background:rgba(255,255,255,0.16);
+    border:1.5px solid rgba(255,255,255,0.5);
+    border-radius:14px;
+    padding:10px 20px;
+    font-size:13px;
+    font-weight:800;
+    display:flex; align-items:center; gap:8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+
+  <div class="deco cloud" style="top:40px; right:230px;">☁️</div>
+  <div class="deco star" style="top:120px; right:410px;">✨</div>
+  <div class="deco star" style="bottom:180px; left:30px;">⭐</div>
+  <div class="deco cloud" style="bottom:130px; right:60px; opacity:0.35;">☁️</div>
+
+  <div class="header">
+    <div class="brand">
+      <svg class="icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FBF2E7"/><stop offset="100%" stop-color="#F0DCC4"/>
+          </linearGradient>
+          <linearGradient id="body" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#D48A66"/><stop offset="100%" stop-color="#BC6E49"/>
+          </linearGradient>
+        </defs>
+        <rect width="512" height="512" rx="132" ry="132" fill="url(#bg)"/>
+        <path d="M 130 372 Q 256 430 382 372 Q 340 400 256 400 Q 172 400 130 372 Z" fill="#E3B78F" opacity="0.55"/>
+        <circle cx="352" cy="150" r="8" fill="#C98A66" opacity="0.55"/>
+        <circle cx="376" cy="128" r="11" fill="#C98A66" opacity="0.7"/>
+        <circle cx="404" cy="102" r="15" fill="#C98A66" opacity="0.85"/>
+        <circle cx="197" cy="228" r="38" fill="url(#body)"/>
+        <circle cx="315" cy="228" r="38" fill="url(#body)"/>
+        <circle cx="197" cy="230" r="18" fill="#F0DCC4"/>
+        <circle cx="315" cy="230" r="18" fill="#F0DCC4"/>
+        <ellipse cx="256" cy="298" rx="118" ry="102" fill="url(#body)"/>
+        <ellipse cx="196" cy="318" rx="20" ry="13" fill="#F4C9A8" opacity="0.8"/>
+        <ellipse cx="316" cy="318" rx="20" ry="13" fill="#F4C9A8" opacity="0.8"/>
+        <path d="M 214 288 Q 228 300 242 288" stroke="#5C3B2A" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <path d="M 270 288 Q 284 300 298 288" stroke="#5C3B2A" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <ellipse cx="256" cy="322" rx="10" ry="7" fill="#5C3B2A"/>
+        <path d="M 256 329 Q 256 342 238 344" stroke="#5C3B2A" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M 256 329 Q 256 342 274 344" stroke="#5C3B2A" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h1>Дремчо</h1>
+        <p>Всичко за бебето</p>
+      </div>
+    </div>
+
+    <div class="seal">
+      <svg viewBox="0 0 280 280">
+        <path d="M 140.00 8.00 Q 140.00 8.00 150.93 19.08 Q 161.85 30.15 176.18 24.10 Q 190.51 18.05 196.37 32.46 Q 202.22 46.88 217.78 46.77 Q 233.34 46.66 233.23 62.22 Q 233.12 77.78 247.54 83.63 Q 261.95 89.49 255.90 103.82 Q 249.85 118.15 260.92 129.07 Q 272.00 140.00 260.92 150.93 Q 249.85 161.85 255.90 176.18 Q 261.95 190.51 247.54 196.37 Q 233.12 202.22 233.23 217.78 Q 233.34 233.34 217.78 233.23 Q 202.22 233.12 196.37 247.54 Q 190.51 261.95 176.18 255.90 Q 161.85 249.85 150.93 260.92 Q 140.00 272.00 129.07 260.92 Q 118.15 249.85 103.82 255.90 Q 89.49 261.95 83.63 247.54 Q 77.78 233.12 62.22 233.23 Q 46.66 233.34 46.77 217.78 Q 46.88 202.22 32.46 196.37 Q 18.05 190.51 24.10 176.18 Q 30.15 161.85 19.08 150.93 Q 8.00 140.00 19.08 129.07 Q 30.15 118.15 24.10 103.82 Q 18.05 89.49 32.46 83.63 Q 46.88 77.78 46.77 62.22 Q 46.66 46.66 62.22 46.77 Q 77.78 46.88 83.63 32.46 Q 89.49 18.05 103.82 24.10 Q 118.15 30.15 129.07 19.08 Z"
+          fill="#96AC85"/>
+      </svg>
+      <div class="seal-text">
+        <div><b>100%</b>PREMIUM<br>БЕЗ РЕКЛАМИ<br>БЕЗ АБОНАМЕНТ</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h2>Спокойни родители. <span>Щастливо бебче.</span></h2>
+    <p>Дремчо е твоят приятел през дългите нощи — проследяване, AI прогнози и семейни грижи на едно място. Без такси, без изненади, завинаги безплатно.</p>
+
+    <div class="trust-row">
+      <div class="trust-pill solid">✓ Без реклами</div>
+      <div class="trust-pill solid">✓ Без абонамент</div>
+      <div class="trust-pill">🔒 Офлайн-съвместим</div>
+      <div class="trust-pill">👨‍👩‍👧 Семейно споделяне</div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="feat"><div class="fic">🍼</div><p>Хранене<span>Кърмене · шише · твърда храна</span></p></div>
+    <div class="feat"><div class="fic">😴</div><p>AI прогноза за сън<span>Знае кога ще заспи</span></p></div>
+    <div class="feat"><div class="fic">🧷</div><p>Памперси<span>Лог с един тап</span></p></div>
+    <div class="feat"><div class="fic">📈</div><p>Растеж<span>WHO таблици и персентили</span></p></div>
+    <div class="feat"><div class="fic">🩺</div><p>Здраве<span>Ваксини · лекарства · температура</span></p></div>
+    <div class="feat"><div class="fic">🧸</div><p>Семейство<span>Синхрон в реално време</span></p></div>
+    <div class="feat"><div class="fic">🔔</div><p>Умни напомняния<span>Работят и офлайн</span></p></div>
+    <div class="feat"><div class="fic">🤖</div><p>AI асистент<span>Отговаря на всеки въпрос</span></p></div>
+    <div class="feat"><div class="fic">🧥</div><p>Времето навън<span>Какво да облечем</span></p></div>
+    <div class="feat"><div class="fic">📤</div><p>Експорт<span>PDF/CSV за педиатъра</span></p></div>
+    <div class="feat"><div class="fic">🎙️</div><p>Гласово логване<span>Едноръко, докато носиш бебе</span></p></div>
+    <div class="feat"><div class="fic">🌙</div><p>Нощен режим<span>Големи бутони в 3 ч.</span></p></div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <h3>Дремчо е готов, когато си ти 🌟</h3>
+      <p>Свали безплатно — завинаги без скрити такси</p>
+    </div>
+    <div class="stores">
+      <div class="store-btn">▶️ Google Play · скоро</div>
+      <div class="store-btn">🍎 App Store · по-късно</div>
+    </div>
+  </div>
+
+  <p style="text-align:center;margin-top:18px;font-size:13px;font-weight:700;color:#8A6A56;">
+    <a href="/privacy.html" style="color:#C97C5D;text-decoration:none;">Политика за поверителност</a>
+    · dremcho.com
+  </p>
+
+</div>
+
+</body>
+</html>

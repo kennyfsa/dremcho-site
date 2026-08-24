@@ -1,0 +1,36 @@
+<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="body2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D48A66"/>
+      <stop offset="100%" stop-color="#BC6E49"/>
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&amp;family=Nunito:wght@400;600&amp;display=swap');
+      .word { font-family: 'Comfortaa', sans-serif; font-weight: 700; fill: #5C3B2A; }
+      .tag  { font-family: 'Nunito', sans-serif; font-weight: 600; fill: #A8785F; letter-spacing: 1.5px; }
+    </style>
+  </defs>
+
+  <!-- mini icon -->
+  <g transform="translate(20,20) scale(0.42)">
+    <rect x="0" y="0" width="512" height="512" rx="132" ry="132" fill="#F5E6D3"/>
+    <circle cx="352" cy="150" r="8" fill="#C98A66" opacity="0.55"/>
+    <circle cx="376" cy="128" r="11" fill="#C98A66" opacity="0.7"/>
+    <circle cx="404" cy="102" r="15" fill="#C98A66" opacity="0.85"/>
+    <circle cx="197" cy="228" r="38" fill="url(#body2)"/>
+    <circle cx="315" cy="228" r="38" fill="url(#body2)"/>
+    <circle cx="197" cy="230" r="18" fill="#F0DCC4"/>
+    <circle cx="315" cy="230" r="18" fill="#F0DCC4"/>
+    <ellipse cx="256" cy="298" rx="118" ry="102" fill="url(#body2)"/>
+    <ellipse cx="196" cy="318" rx="20" ry="13" fill="#F4C9A8" opacity="0.8"/>
+    <ellipse cx="316" cy="318" rx="20" ry="13" fill="#F4C9A8" opacity="0.8"/>
+    <path d="M 214 288 Q 228 300 242 288" stroke="#5C3B2A" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M 270 288 Q 284 300 298 288" stroke="#5C3B2A" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <ellipse cx="256" cy="322" rx="10" ry="7" fill="#5C3B2A"/>
+    <path d="M 256 329 Q 256 342 238 344" stroke="#5C3B2A" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M 256 329 Q 256 342 274 344" stroke="#5C3B2A" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <text x="245" y="150" class="word" font-size="72">Дремчо</text>
+  <text x="248" y="185" class="tag" font-size="20">ВСИЧКО ЗА БЕБЕТО · БЕЗ АБОНАМЕНТ</text>
+</svg>
