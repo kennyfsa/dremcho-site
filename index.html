@@ -245,12 +245,8 @@
     flex:1 1 auto;
     display:flex;
     justify-content:flex-end;
+    align-items:center;
     min-width:0;
-  }
-  .media-logo img{
-    width:min(340px, 100%);
-    height:auto;
-    display:block;
   }
 
   /* ---------- feature grid ---------- */
@@ -368,7 +364,6 @@
     .video-card{ flex:0 0 180px; padding:8px; }
     .tiktok-mini{ flex:0 0 130px; }
     .media-logo{ flex:1 1 100%; justify-content:center; }
-    .media-logo img{ width:min(260px, 90%); }
     .grid{
       grid-template-columns:1fr 1fr;
       gap:10px;
@@ -509,7 +504,13 @@
       <p>TikTok<span>@dremchocom</span></p>
     </a>
     <div class="media-logo">
-      <img src="logo_wordmark.svg" alt="Дремчо — всичко за бебето">
+      <div class="brand">
+        <img class="icon" src="logo_icon.svg" alt="">
+        <div>
+          <h1>Дремчо</h1>
+          <p>Всичко за бебето</p>
+        </div>
+      </div>
     </div>
   </div>
 
