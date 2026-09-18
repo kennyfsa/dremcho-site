@@ -181,13 +181,10 @@
 
   .cta-row{
     margin-top:22px;
-  }
-  .trail-scene{
-    position:relative;
-    display:inline-flex;
+    display:flex;
+    flex-wrap:wrap;
     align-items:center;
-    min-height:100px;
-    padding:10px 200px 10px 16px;
+    gap:4px 8px;
   }
   .trail-btn{
     display:inline-flex; align-items:center; gap:8px;
@@ -197,21 +194,17 @@
     padding:14px 24px; border-radius:18px;
     box-shadow:0 12px 24px rgba(201,124,93,0.32);
     transition:transform .2s ease, opacity .2s ease;
-    position:relative;
-    z-index:2;
+    flex:0 0 auto;
   }
   .trail-btn:hover{ transform:translateY(-2px); }
   .trail-btn.going{ transform:scale(0.97); opacity:0.85; }
 
   .trail-mini{
-    position:absolute;
-    left:0;
-    right:0;
-    top:-12px;
-    bottom:12px;
-    z-index:0;
+    position:relative;
+    width:200px;
+    height:78px;
+    flex:0 0 200px;
     pointer-events:none;
-    overflow:visible;
   }
   .trail-mini-path{
     position:absolute;
@@ -224,31 +217,30 @@
     line-height:1;
     filter:drop-shadow(0 2px 2px rgba(92,59,42,0.18));
   }
-  .trail-mini-tree.t1{ left:6px; top:2px; font-size:18px; }
-  .trail-mini-tree.t2{ left:22%; top:0; font-size:15px; opacity:0.9; }
-  .trail-mini-tree.t3{ left:38%; top:52px; font-size:16px; }
-  .trail-mini-tree.t4{ right:118px; top:0; font-size:19px; }
-  .trail-mini-tree.t5{ right:78px; top:50px; font-size:15px; }
+  .trail-mini-tree.t1{ left:18px; top:6px; font-size:16px; }
+  .trail-mini-tree.t2{ left:78px; top:2px; font-size:18px; }
+  .trail-mini-tree.t3{ left:52px; bottom:6px; font-size:14px; }
   .trail-mini-house{
     position:absolute;
-    right:8px;
-    top:0;
-    font-size:28px;
+    right:0;
+    top:8px;
+    font-size:26px;
     line-height:1;
     filter:drop-shadow(0 3px 3px rgba(92,59,42,0.2));
   }
   .trail-mini-bear{
     position:absolute;
-    width:52px;
+    width:48px;
     height:auto;
-    right:92px;
-    top:2px;
+    left:42%;
+    top:4px;
+    transform:translateX(-50%);
     filter:drop-shadow(0 6px 8px rgba(92,59,42,0.25));
     animation:trailBearBob 1.7s ease-in-out infinite;
   }
   @keyframes trailBearBob{
-    0%,100%{ transform:translateY(0); }
-    50%{ transform:translateY(-5px); }
+    0%,100%{ transform:translateX(-50%) translateY(0); }
+    50%{ transform:translateX(-50%) translateY(-5px); }
   }
 
   .trust-row{ display:flex; gap:12px; margin-top:20px; flex-wrap:wrap; }
@@ -477,8 +469,9 @@
     .hero p{ font-size:15px; }
     .trust-row{ gap:8px; }
     .trust-pill{ padding:8px 12px; font-size:12px; }
-    .trail-btn{ font-size:15px; padding:12px 16px; }
-    .trail-scene{ padding:8px 140px 8px 8px; min-height:88px; }
+    .trail-btn{ font-size:15px; padding:12px 16px; width:100%; justify-content:center; }
+    .cta-row{ gap:2px; }
+    .trail-mini{ width:100%; max-width:240px; flex:0 0 auto; height:72px; }
     .media{
       flex-wrap:wrap;
       justify-content:center;
@@ -600,21 +593,17 @@
     </div>
 
     <div class="cta-row">
-      <div class="trail-scene">
-        <div class="trail-mini" aria-hidden="true">
-          <svg class="trail-mini-path" viewBox="0 0 520 100" preserveAspectRatio="none">
-            <path d="M 6 38 C 90 38, 140 22, 230 34 C 320 46, 380 20, 470 32" fill="none" stroke="#E8D9C4" stroke-width="16" stroke-linecap="round"/>
-            <path d="M 6 38 C 90 38, 140 22, 230 34 C 320 46, 380 20, 470 32" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/>
-          </svg>
-          <span class="trail-mini-tree t1">🌲</span>
-          <span class="trail-mini-tree t2">🌿</span>
-          <span class="trail-mini-tree t3">🌳</span>
-          <span class="trail-mini-tree t4">🌲</span>
-          <span class="trail-mini-tree t5">🌿</span>
-          <img class="trail-mini-bear" src="trail/bear.png" alt="">
-          <span class="trail-mini-house">🏡</span>
-        </div>
-        <a class="trail-btn" id="trailCta" href="/trail.html">Разходи се по пътечката</a>
+      <a class="trail-btn" id="trailCta" href="/trail.html">Разходи се по пътечката</a>
+      <div class="trail-mini" aria-hidden="true">
+        <svg class="trail-mini-path" viewBox="0 0 200 78">
+          <path d="M 2 48 C 48 48, 52 24, 108 30 C 150 35, 148 52, 168 48" fill="none" stroke="#E8D9C4" stroke-width="16" stroke-linecap="round"/>
+          <path d="M 2 48 C 48 48, 52 24, 108 30 C 150 35, 148 52, 168 48" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/>
+        </svg>
+        <span class="trail-mini-tree t1">🌲</span>
+        <span class="trail-mini-tree t2">🌳</span>
+        <span class="trail-mini-tree t3">🌿</span>
+        <img class="trail-mini-bear" src="trail/bear.png" alt="">
+        <span class="trail-mini-house">🏡</span>
       </div>
     </div>
   </div>
