@@ -162,7 +162,15 @@
   .seal-text b{ display:block; font-family:'Comfortaa',sans-serif; font-size:19px; margin-bottom:3px; }
 
   /* ---------- hero ---------- */
-  .hero{ margin-top:22px; max-width:980px; }
+  .hero{
+    margin-top:22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    max-width:none;
+  }
+  .hero-copy{ flex:1 1 auto; min-width:0; max-width:760px; }
   .hero h2{
     font-family:'Comfortaa',sans-serif;
     font-size:52px;
@@ -179,18 +187,66 @@
     max-width:720px;
   }
 
-  .cta-row{ margin-top:22px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
-  .trail-btn{
-    display:inline-flex; align-items:center; gap:8px;
-    background:linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-2) 100%);
-    color:#fff; text-decoration:none;
-    font-weight:800; font-size:16px;
-    padding:14px 24px; border-radius:18px;
-    box-shadow:0 12px 24px rgba(201,124,93,0.32);
-    transition:transform .2s ease, opacity .2s ease;
+  .trail-cta{
+    flex:0 0 230px;
+    width:230px;
+    position:relative;
+    text-decoration:none;
+    color:inherit;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(227,183,126,0.45) 0%, transparent 42%),
+      radial-gradient(circle at 88% 78%, rgba(170,191,156,0.4) 0%, transparent 46%),
+      var(--card);
+    border:3px solid var(--cream-2);
+    border-radius:32px;
+    padding:16px 14px 18px;
+    box-shadow:0 16px 32px rgba(92,59,42,0.14);
+    transform:rotate(3.5deg);
+    transition:transform .22s ease, box-shadow .22s ease;
   }
-  .trail-btn:hover{ transform:translateY(-2px); }
-  .trail-btn.going{ transform:scale(0.97); opacity:0.85; }
+  .trail-cta:hover{
+    transform:rotate(1.5deg) translateY(-4px);
+    box-shadow:0 22px 36px rgba(92,59,42,0.2);
+  }
+  .trail-cta.going{ transform:scale(0.97) rotate(3.5deg); opacity:0.88; }
+  .trail-cta-path{
+    width:100%;
+    height:132px;
+    display:block;
+  }
+  .trail-cta-bear{
+    position:absolute;
+    width:78px;
+    height:auto;
+    left:54%;
+    top:34px;
+    transform:translateX(-50%);
+    filter:drop-shadow(0 8px 10px rgba(92,59,42,0.28));
+    animation:trailBearBob 1.7s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes trailBearBob{
+    0%,100%{ transform:translateX(-50%) translateY(0); }
+    50%{ transform:translateX(-50%) translateY(-7px); }
+  }
+  .trail-cta-label{
+    display:block;
+    text-align:center;
+    font-family:'Comfortaa',sans-serif;
+    font-size:15px;
+    font-weight:700;
+    color:var(--brown);
+    line-height:1.3;
+    margin-top:4px;
+  }
+  .trail-cta-hint{
+    display:block;
+    text-align:center;
+    margin-top:6px;
+    font-size:11.5px;
+    font-weight:800;
+    color:var(--terracotta);
+  }
 
   .trust-row{ display:flex; gap:12px; margin-top:20px; flex-wrap:wrap; }
   .trust-pill{
@@ -388,6 +444,7 @@
   @media (max-width: 1100px){
     .slide{ padding:40px 36px 32px; min-height:0; }
     .hero h2{ font-size:40px; }
+    .trail-cta{ flex-basis:200px; width:200px; }
     .seal{ width:120px; height:120px; }
   }
 
@@ -413,12 +470,19 @@
     .seal{ width:88px; height:88px; transform:rotate(6deg); }
     .seal-text div{ font-size:7.5px; line-height:1.35; }
     .seal-text b{ font-size:13px; margin-bottom:1px; }
-    .hero{ margin-top:18px; }
+    .hero{ margin-top:18px; flex-direction:column; align-items:stretch; gap:16px; }
     .hero h2{ font-size:28px; }
     .hero p{ font-size:15px; }
     .trust-row{ gap:8px; }
     .trust-pill{ padding:8px 12px; font-size:12px; }
-    .trail-btn{ width:100%; justify-content:center; font-size:15px; }
+    .trail-cta{
+      width:100%;
+      max-width:280px;
+      flex-basis:auto;
+      align-self:center;
+      transform:rotate(-1.5deg);
+    }
+    .trail-cta:hover{ transform:rotate(-1.5deg) translateY(-3px); }
     .media{
       flex-wrap:wrap;
       justify-content:center;
@@ -463,6 +527,10 @@
   @media (max-width: 380px){
     .grid{ grid-template-columns:1fr; }
     .hero h2{ font-size:24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .trail-cta-bear{ animation:none; }
   }
 
 </style>
@@ -523,20 +591,28 @@
   </div>
 
   <div class="hero">
-    <h2>Спокойни родители. <span>Щастливо бебче.</span></h2>
-    <p>Дремчо е твоят приятел през дългите нощи — проследяване, AI прогнози и семейни грижи на едно място. Без такси, без изненади, завинаги безплатно. Безплатен бебешки дневник за Android: сън на бебето, кърмене, памперси, растеж и споделяне със семейството.</p>
+    <div class="hero-copy">
+      <h2>Спокойни родители. <span>Щастливо бебче.</span></h2>
+      <p>Дремчо е твоят приятел през дългите нощи — проследяване, AI прогнози и семейни грижи на едно място. Без такси, без изненади, завинаги безплатно. Безплатен бебешки дневник за Android: сън на бебето, кърмене, памперси, растеж и споделяне със семейството.</p>
 
-    <div class="trust-row">
-      <div class="trust-pill solid">✓ Без реклами</div>
-      <div class="trust-pill solid">✓ Без абонамент</div>
-      <div class="trust-pill">🔒 Офлайн-съвместим</div>
-      <div class="trust-pill">👨‍👩‍👧 Семейно споделяне</div>
-      <div class="trust-pill">🎬 Забавни уникални видеа</div>
+      <div class="trust-row">
+        <div class="trust-pill solid">✓ Без реклами</div>
+        <div class="trust-pill solid">✓ Без абонамент</div>
+        <div class="trust-pill">🔒 Офлайн-съвместим</div>
+        <div class="trust-pill">👨‍👩‍👧 Семейно споделяне</div>
+        <div class="trust-pill">🎬 Забавни уникални видеа</div>
+      </div>
     </div>
 
-    <div class="cta-row">
-      <a class="trail-btn" id="trailCta" href="/trail.html">🐻 Разходи се по пътечката</a>
-    </div>
+    <a class="trail-cta" id="trailCta" href="/trail.html">
+      <svg class="trail-cta-path" viewBox="0 0 200 132" aria-hidden="true">
+        <path d="M 18 18 C 70 18, 50 70, 100 72 C 150 74, 130 118, 182 114" fill="none" stroke="#E8D9C4" stroke-width="22" stroke-linecap="round"/>
+        <path d="M 18 18 C 70 18, 50 70, 100 72 C 150 74, 130 118, 182 114" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-dasharray="3 14"/>
+      </svg>
+      <img class="trail-cta-bear" src="trail/bear.png" alt="">
+      <span class="trail-cta-label">Разходи се по пътечката</span>
+      <span class="trail-cta-hint">хайде с Дремчо →</span>
+    </a>
   </div>
 
   <div class="grid">
@@ -609,12 +685,16 @@
 (function(){
   var btn = document.getElementById('trailCta');
   if (!btn) return;
+  var label = btn.querySelector('.trail-cta-label');
+  var hint = btn.querySelector('.trail-cta-hint');
   var state = null;
   try { state = localStorage.getItem('dremcho_trail'); } catch (e) {}
   if (state === 'done') {
-    btn.textContent = '🐻 Разходи се пак по пътечката';
+    if (label) label.textContent = 'Разходи се пак';
+    if (hint) hint.textContent = 'Дремчо те чака →';
   } else if (state === 'started') {
-    btn.textContent = '🐻 Продължи пътечката';
+    if (label) label.textContent = 'Продължи пътечката';
+    if (hint) hint.textContent = 'Дремчо е на пътя →';
   }
   btn.addEventListener('click', function(){
     try { if (!localStorage.getItem('dremcho_trail')) localStorage.setItem('dremcho_trail', 'started'); } catch (e) {}
