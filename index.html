@@ -205,7 +205,10 @@
 
   .trail-mini{
     position:absolute;
-    inset:0;
+    left:0;
+    right:0;
+    top:-12px;
+    bottom:12px;
     z-index:0;
     pointer-events:none;
     overflow:visible;
@@ -221,15 +224,15 @@
     line-height:1;
     filter:drop-shadow(0 2px 2px rgba(92,59,42,0.18));
   }
-  .trail-mini-tree.t1{ left:6px; top:18px; font-size:18px; }
-  .trail-mini-tree.t2{ left:22%; top:8px; font-size:15px; opacity:0.9; }
-  .trail-mini-tree.t3{ left:38%; bottom:8px; font-size:16px; }
-  .trail-mini-tree.t4{ right:118px; top:10px; font-size:19px; }
-  .trail-mini-tree.t5{ right:78px; bottom:10px; font-size:15px; }
+  .trail-mini-tree.t1{ left:6px; top:2px; font-size:18px; }
+  .trail-mini-tree.t2{ left:22%; top:0; font-size:15px; opacity:0.9; }
+  .trail-mini-tree.t3{ left:38%; top:52px; font-size:16px; }
+  .trail-mini-tree.t4{ right:118px; top:0; font-size:19px; }
+  .trail-mini-tree.t5{ right:78px; top:50px; font-size:15px; }
   .trail-mini-house{
     position:absolute;
     right:8px;
-    top:14px;
+    top:0;
     font-size:28px;
     line-height:1;
     filter:drop-shadow(0 3px 3px rgba(92,59,42,0.2));
@@ -239,7 +242,7 @@
     width:52px;
     height:auto;
     right:92px;
-    top:18px;
+    top:2px;
     filter:drop-shadow(0 6px 8px rgba(92,59,42,0.25));
     animation:trailBearBob 1.7s ease-in-out infinite;
   }
@@ -600,8 +603,8 @@
       <div class="trail-scene">
         <div class="trail-mini" aria-hidden="true">
           <svg class="trail-mini-path" viewBox="0 0 520 100" preserveAspectRatio="none">
-            <path d="M 6 58 C 90 58, 140 42, 230 54 C 320 66, 380 40, 470 52" fill="none" stroke="#E8D9C4" stroke-width="16" stroke-linecap="round"/>
-            <path d="M 6 58 C 90 58, 140 42, 230 54 C 320 66, 380 40, 470 52" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/>
+            <path d="M 6 38 C 90 38, 140 22, 230 34 C 320 46, 380 20, 470 32" fill="none" stroke="#E8D9C4" stroke-width="16" stroke-linecap="round"/>
+            <path d="M 6 38 C 90 38, 140 22, 230 34 C 320 46, 380 20, 470 32" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/>
           </svg>
           <span class="trail-mini-tree t1">🌲</span>
           <span class="trail-mini-tree t2">🌿</span>
