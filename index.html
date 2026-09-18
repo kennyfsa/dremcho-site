@@ -386,12 +386,22 @@
     margin-right:auto;
   }
   .partner-slide{
+    display:block;
     background:var(--card);
     border-radius:26px;
+    border:2px solid transparent;
     box-shadow:0 8px 20px rgba(92,59,42,0.08);
     overflow:hidden;
     aspect-ratio:16 / 9;
     min-width:0;
+    cursor:pointer;
+    text-decoration:none;
+    color:inherit;
+    transition:border-color .28s ease, box-shadow .28s ease;
+  }
+  .partner-slide:hover{
+    border-color:rgba(201,124,93,0.38);
+    box-shadow:0 8px 20px rgba(92,59,42,0.08), 0 0 0 4px rgba(201,124,93,0.14);
   }
   .partner-slide img{
     width:100%;
@@ -623,10 +633,12 @@
     <div class="feat"><div class="fic">🌙</div><p>Нощен режим<span>Големи бутони в 3 ч.</span></p></div>
   </div>
 
-konkreten deta  <section class="partners" aria-label="Партньори, които вярват в нас">
+  <section class="partners" aria-label="Партньори, които вярват в нас">
     <h2>Партньори, които <span>вярват в нас</span></h2>
     <div class="partner-track">
-      <div class="partner-slide"><img src="partners/slide-1.png" alt="Party Drinks За бебето" width="1600" height="900"></div>
+      <a class="partner-slide" href="https://www.facebook.com/PartydrinksbeverageBG/" target="_blank" rel="noopener noreferrer">
+        <img src="partners/slide-1.png" alt="Party Drinks За бебето" width="1600" height="900">
+      </a>
     </div>
   </section>
 
