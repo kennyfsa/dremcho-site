@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Дремчо — приложение за бебе | Сън, хранене, без абонамент</title>
-<meta name="description" content="Дремчо е безплатно Android приложение за родители: сън на бебето, хранене, памперси, растеж по СЗО и семейно споделяне. Без реклами и без абонамент.">
-<meta name="keywords" content="Дремчо, Dremcho, приложение за бебе, бебешки дневник, сън на бебе, кърмене, памперси, растеж бебе, приложение за родители, бебе трекер Android, без абонамент">
+<meta name="description" content="Дремчо е безплатно Android приложение за родители: сън на бебето, хранене, памперси, растеж по СЗО и семейно споделяне. Без реклами и без абонамент. Тестова версия и въпроси: dremchocom@gmail.com.">
+<meta name="keywords" content="Дремчо, Dremcho, приложение за бебе, бебешки дневник, сън на бебе, кърмене, памперси, растеж бебе, приложение за родители, бебе трекер Android, без абонамент, тестова версия Дремчо, dremchocom">
 <meta name="author" content="Дремчо">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="googlebot" content="index, follow">
@@ -21,7 +21,7 @@
 <meta property="og:locale" content="bg_BG">
 <meta property="og:site_name" content="Дремчо">
 <meta property="og:title" content="Дремчо — всичко за бебето. Без абонамент.">
-<meta property="og:description" content="Безплатно Android приложение за родители: сън, хранене, памперси, растеж и семейно споделяне. Без реклами.">
+<meta property="og:description" content="Безплатно Android приложение за родители: сън, хранене, памперси, растеж и семейно споделяне. Без реклами. Тестова версия: dremchocom@gmail.com">
 <meta property="og:url" content="https://dremcho.com/">
 <meta property="og:image" content="https://dremcho.com/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -29,7 +29,7 @@
 <meta property="og:image:alt" content="Дремчо — приложение за бебе. Всичко за бебето. Без абонамент.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Дремчо — приложение за бебе | Без абонамент">
-<meta name="twitter:description" content="Сън, хранене, памперси и семейно споделяне. Безплатно Android приложение за родители. Без реклами.">
+<meta name="twitter:description" content="Сън, хранене, памперси и семейно споделяне. Безплатно за родители. Тестова версия: dremchocom@gmail.com">
 <meta name="twitter:image" content="https://dremcho.com/og-cover.png">
 <script type="application/ld+json">
 {
@@ -42,7 +42,14 @@
       "alternateName": "Dremcho",
       "url": "https://dremcho.com/",
       "logo": "https://dremcho.com/logo_icon.svg",
+      "email": "dremchocom@gmail.com",
       "sameAs": ["https://www.tiktok.com/@dremchocom"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "dremchocom@gmail.com",
+        "contactType": "customer support",
+        "availableLanguage": ["bg"]
+      },
       "description": "Безплатно Android приложение за родители — всичко за бебето, без абонамент."
     },
     {
@@ -87,6 +94,7 @@
         "Гласово логване",
         "Експорт PDF/CSV за педиатър"
       ],
+      "email": "dremchocom@gmail.com",
       "publisher": { "@id": "https://dremcho.com/#org" }
     }
   ]
@@ -170,6 +178,19 @@
     margin-top:12px;
     max-width:720px;
   }
+
+  .cta-row{ margin-top:22px; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+  .trail-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-2) 100%);
+    color:#fff; text-decoration:none;
+    font-weight:800; font-size:16px;
+    padding:14px 24px; border-radius:18px;
+    box-shadow:0 12px 24px rgba(201,124,93,0.32);
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .trail-btn:hover{ transform:translateY(-2px); }
+  .trail-btn.going{ transform:scale(0.97); opacity:0.85; }
 
   .trust-row{ display:flex; gap:12px; margin-top:20px; flex-wrap:wrap; }
   .trust-pill{
@@ -290,6 +311,47 @@
   .feat:nth-child(3n+2){ transform:rotate(1.4deg); }
   .feat:nth-child(3n){ transform:rotate(-0.8deg); }
 
+  /* ---------- partners ---------- */
+  .partners{
+    margin-top:34px;
+    text-align:center;
+  }
+  .partners h2{
+    font-family:'Comfortaa',sans-serif;
+    font-size:32px;
+    font-weight:700;
+    color:var(--brown);
+    line-height:1.15;
+  }
+  .partners h2 span{ color:var(--terracotta); }
+  .partner-track{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:12px;
+    margin-top:16px;
+    width:50%;
+    max-width:50%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .partner-slide{
+    background:var(--card);
+    border-radius:26px;
+    box-shadow:0 8px 20px rgba(92,59,42,0.08);
+    overflow:hidden;
+    aspect-ratio:16 / 9;
+    min-width:0;
+  }
+  .partner-slide img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+  }
+  .partner-slide:nth-child(3n+1){ transform:rotate(-1.6deg); }
+  .partner-slide:nth-child(3n+2){ transform:rotate(1.4deg); }
+  .partner-slide:nth-child(3n){ transform:rotate(-0.8deg); }
+
   /* ---------- footer ---------- */
   .footer{
     margin-top:36px;
@@ -303,6 +365,7 @@
   }
   .footer h3{ font-family:'Comfortaa',sans-serif; font-size:22px; font-weight:700; }
   .footer p{ font-size:13.5px; font-weight:700; color:#F6E4D6; margin-top:4px; }
+  .footer a{ color:#fff; font-weight:800; }
   .stores{ display:flex; gap:12px; }
   .store-btn{
     background:rgba(255,255,255,0.16);
@@ -355,6 +418,7 @@
     .hero p{ font-size:15px; }
     .trust-row{ gap:8px; }
     .trust-pill{ padding:8px 12px; font-size:12px; }
+    .trail-btn{ width:100%; justify-content:center; font-size:15px; }
     .media{
       flex-wrap:wrap;
       justify-content:center;
@@ -377,6 +441,10 @@
     .feat .fic{ width:44px; height:44px; font-size:22px; margin-bottom:8px; }
     .feat p{ font-size:13px; }
     .feat span{ font-size:11px; }
+    .partners{ margin-top:22px; }
+    .partners h2{ font-size:24px; }
+    .partner-track{ width:100%; max-width:none; gap:10px; }
+    .partner-slide{ border-radius:18px; transform:none !important; }
     .footer{
       flex-direction:column;
       align-items:stretch;
@@ -396,6 +464,7 @@
     .grid{ grid-template-columns:1fr; }
     .hero h2{ font-size:24px; }
   }
+
 </style>
 </head>
 <body>
@@ -464,6 +533,10 @@
       <div class="trust-pill">👨‍👩‍👧 Семейно споделяне</div>
       <div class="trust-pill">🎬 Забавни уникални видеа</div>
     </div>
+
+    <div class="cta-row">
+      <a class="trail-btn" id="trailCta" href="/trail.html">🐻 Разходи се по пътечката</a>
+    </div>
   </div>
 
   <div class="grid">
@@ -481,10 +554,20 @@
     <div class="feat"><div class="fic">🌙</div><p>Нощен режим<span>Големи бутони в 3 ч.</span></p></div>
   </div>
 
+  <section class="partners" aria-label="Партньори">
+    <h2>Парт<span>ньори</span></h2>
+    <div class="partner-track">
+      <div class="partner-slide"><img src="partners/slide-1.png" alt="Временно лого на партньор 1" width="1600" height="900"></div>
+      <div class="partner-slide"><img src="partners/slide-2.png" alt="Временно лого на партньор 2" width="1600" height="900"></div>
+      <div class="partner-slide"><img src="partners/slide-3.png" alt="Временно лого на партньор 3" width="1600" height="900"></div>
+    </div>
+  </section>
+
   <div class="footer">
     <div>
       <h3>Дремчо е готов, когато си ти 🌟</h3>
       <p>Свали безплатно — завинаги без скрити такси</p>
+      <p>Въпроси и тестова версия: <a href="mailto:dremchocom@gmail.com">dremchocom@gmail.com</a></p>
     </div>
     <div class="stores">
       <div class="store-btn">▶️ Google Play · скоро</div>
@@ -516,10 +599,29 @@
 
   <p class="legal">
     <a href="/privacy.html" style="color:#C97C5D;text-decoration:none;">Политика за поверителност</a>
+    · <a href="/trail.html" style="color:#C97C5D;text-decoration:none;">Пътечката</a>
+    · <a href="mailto:dremchocom@gmail.com" style="color:#C97C5D;text-decoration:none;">dremchocom@gmail.com</a>
     · dremcho.com
   </p>
 
 </div>
+<script>
+(function(){
+  var btn = document.getElementById('trailCta');
+  if (!btn) return;
+  var state = null;
+  try { state = localStorage.getItem('dremcho_trail'); } catch (e) {}
+  if (state === 'done') {
+    btn.textContent = '🐻 Разходи се пак по пътечката';
+  } else if (state === 'started') {
+    btn.textContent = '🐻 Продължи пътечката';
+  }
+  btn.addEventListener('click', function(){
+    try { if (!localStorage.getItem('dremcho_trail')) localStorage.setItem('dremcho_trail', 'started'); } catch (e) {}
+    btn.classList.add('going');
+  });
+})();
+</script>
 
 </body>
 </html>
